@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { blogdata } from './Data/blogdata'
 
 function BlogPage() {
@@ -7,6 +7,10 @@ function BlogPage() {
     <>
         <h1>Blog Page</h1>
 
+		{/* Esta etiqueta es donde aparecerá renderizado el componente 
+		hijo */}
+        <Outlet/>
+        
         <ul>
             {blogdata.map( (post, index) => (
                 <BlogLink key={index} post={post} />
